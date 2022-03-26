@@ -35,4 +35,28 @@ contract functionIntro {
     function div(uint x, uint y) private pure returns(uint) {
         return x / y;
     }
+
+// functions outputs - 
+    // return multiple outputs
+    // Name outputs
+    // destructuring Assignment
+
+    function returnMany() public pure returns(uint, bool) {
+        return (1, true);
+    }
+
+    function named() public pure returns(uint x, bool b) {
+        return ( 1, true);
+    }
+
+    // more gas efficent 
+    function assigned() public pure returns(uint x, bool b) {
+        x = 1;
+        b = true;
+    }
+
+    function destructuringAssignments() pure public {
+        (uint x, bool b) = returnMany();
+        (, bool _b) = returnMany();
+    }
 }
